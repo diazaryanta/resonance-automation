@@ -10,7 +10,7 @@ public class LoginTest extends BaseTest {
     public void testSuccessfulLogin() {
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.do_login("maldivesexplore@yahoo.com", "Tester123");
+        loginPage.do_login("admin", "admin");
 
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue(currentUrl.contains("https://resonance.dibimbing.id/"), "Login berhasil!");

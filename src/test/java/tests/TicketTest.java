@@ -1,5 +1,6 @@
 package tests;
 
+import io.reactivex.rxjava3.internal.operators.flowable.FlowableReduceMaybe;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -12,9 +13,9 @@ public class TicketTest extends BaseTest {
     public Object[][] getTicketData() {
         return new Object[][] {
                 // { Judul, Deskripsi, Tipe Tiket, Expected URL }
-                /*{"Success Ticket", "This is a successful public ticket", "Public", "ticket"},
-                {"Describe Null", "  ", "Public", "new"}, // Describe null Bug*/
-                {" ", "  ", "Public", "new"}, // Blank Space Bug
+                {"lorem", "lorem ipsum", "Public", "ticket"},
+                /*{"Describe Null", "  ", "Public", "new"}, // Describe null Bug*/
+                /*{" ", "  ", "Public", "new"}, // Blank Space Bug*/
                 /*{"\ud83d\ude2d", "\u26d4", "Public", "new"}, // Emoticon Bug
                 {"«‘“π…æ¬˚ºåß≤ºåß¡`¡™£¢•¶§∞§º", "Bug", "Public", "new"}, // Input Validation Bug
                 {"Success Ticket", "Ini adalah tiket private", "Private", "ticket"}*/
@@ -26,7 +27,7 @@ public class TicketTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         TicketPage ticketPage = new TicketPage(driver);
 
-        loginPage.do_login("maldivesexplore@yahoo.com", "Tester123");
+        loginPage.do_login("admin", "admin");
 
         test.info("Klik tombol Create Ticket");
         ticketPage.clickCreateTicketButton();
