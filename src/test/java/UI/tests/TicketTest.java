@@ -1,11 +1,11 @@
-package tests;
+package UI.tests;
 
-import io.reactivex.rxjava3.internal.operators.flowable.FlowableReduceMaybe;
+import UI.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import Login.LoginPage;
-import Dashboard.TicketPage;
+import UI.Login.LoginPage;
+import UI.Dashboard.TicketPage;
 
 public class TicketTest extends BaseTest {
 

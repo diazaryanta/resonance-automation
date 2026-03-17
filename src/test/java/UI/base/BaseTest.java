@@ -1,15 +1,15 @@
-package tests;
+package UI.base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import core.DriverManager;
+import UI.core.DriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import utils.ExtentManager;
+import UI.utils.ExtentManager;
 
 import java.io.File;
 import java.io.IOException;

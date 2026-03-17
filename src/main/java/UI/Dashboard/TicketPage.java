@@ -1,6 +1,6 @@
-package Dashboard;
+package UI.Dashboard;
 
-import core.BasePage;
+import UI.core.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

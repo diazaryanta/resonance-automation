@@ -1,8 +1,9 @@
-package tests;
+package UI.tests;
 
+import UI.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import Login.LoginPage;
+import UI.Login.LoginPage;
 
 public class LoginTest extends BaseTest {
 
