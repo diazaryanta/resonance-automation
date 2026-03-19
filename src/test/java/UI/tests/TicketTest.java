@@ -32,18 +32,13 @@ public class TicketTest extends BaseTest {
         test.info("Klik tombol Create Ticket");
         ticketPage.clickCreateTicketButton();
 
-        // Langkah 3: Isi Form
         test.info("Mengisi tiket dengan judul: '" + title + "' | Tipe: " + ticketType);
         ticketPage.fillTicketIssue(title, desc);
 
-        // --- LOGIKA PEMILIHAN TIKET ---
-        // Karena defaultnya Public, kita hanya klik tombol Private jika diminta
         if (ticketType.equalsIgnoreCase("Private")) {
             ticketPage.selectPrivateTicket();
         }
-        // ------------------------------
 
-        // Langkah 4: Submit
         test.info("Klik tombol Submit");
         ticketPage.submitTicket();
 
