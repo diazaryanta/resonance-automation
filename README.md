@@ -1,6 +1,6 @@
 # 🚀 Resonance Test Automation
 
-Proyek ini adalah framework Test Automation untuk platform **Resonance Dibimbing** (https://resonance.dibimbing.id). Di dalamnya sudah mencakup otomatisasi pengujian untuk *User Interface* (UI) dan *Application Programming Interface* (API) menggunakan ekosistem Java.
+Proyek ini adalah framework Test Automation untuk platform **[Resonance Dibimbing](https://resonance.dibimbing.id)**. Di dalamnya sudah mencakup otomatisasi pengujian untuk *User Interface* (UI) dan *Application Programming Interface* (API) menggunakan ekosistem Java.
 
 ## 🛠️ Teknologi & *Library* yang Dipakai
 
@@ -9,7 +9,7 @@ Proyek ini adalah framework Test Automation untuk platform **Resonance Dibimbing
 * **Testing Framework:** TestNG
 * **API Testing:** Rest Assured
 * **UI Testing:** Selenium WebDriver & WebDriverManager
-* **Reporting:** ExtentReports
+* **Reporting:** Extent Reports
 
 ## 📁 Struktur Proyek
 
@@ -19,7 +19,7 @@ Biar kodenya rapi dan gampang dibaca, proyek ini dibangun pakai konsep **Page Ob
 resonance-automation/
 ├── build.gradle                 # Konfigurasi library dan dependencies (Rest Assured, Selenium, dll)
 ├── reports/
-│   ├── screenshots/             # Tempat nyimpen bukti screenshot kalau ada test UI yang gagal
+│   ├── screenshots/             # Tempat nyimpen bukti screenshot kalau ada test UI yang fail
 │   ├── ExtentReport.html        # File HTML buat lihat hasil report lengkap (Pass/Fail)
 ├── src/
 │   ├── main/java/
@@ -44,10 +44,10 @@ resonance-automation/
 
 ## ⚙️ Persiapan Awal (Prerequisites)
 
-Sebelum mulai nge-run proyek ini, pastikan kamu udah nginstall *tools* di bawah ini:
+Sebelum mulai nge-run proyek ini, pastikan sudah menginstall *tools* di bawah ini:
 1.  **Java Development Kit (JDK):** Versi 11, 17, atau 21.
 2.  **IDE:** IntelliJ IDEA (Sangat direkomendasikan).
-3.  **Koneksi Internet:** Wajib ada, karena kita ngetest langsung ke server *live* Resonance.
+3.  **Koneksi Internet:** Wajib ada, karena pengetesan langsung ke server *live* Resonance.
 
 ## 🚀 Cara Menjalankan Test
 
@@ -70,7 +70,7 @@ Kalau mau nge-run semua test sekaligus lewat file konfigurasi XML:
 ## 🧠 Konsep Utama & Troubleshooting
 
 * **Keamanan API (NextAuth):** Server Resonance itu pakai sistem keamanan *NextAuth* yang lumayan ketat. Nah, test API di proyek ini udah diakalin biar selalu nangkep dan ngirim **Bearer Token** plus **Session Cookies** (`__Secure-next-auth.session-token`) secara otomatis lewat class `DataUtility.java`. Kalau kena *401 Unauthorized*, biasanya masalahnya ada di *Cookies* yang *expired*.
-* **API Chaining (Dinamis):** Untuk skenario ngambil tiket pakai ID, kita bikin testnya dinamis. Script bakal otomatis *create* tiket baru dulu buat dapetin ID yang pasti valid (bakal dapet `200 OK`). Nanti tinggal dilanjutin aja dengan ID ngasal kalau mau ngetest skenario `404 Not Found`.
+* **API Chaining (Dinamis):** Untuk skenario ngambil tiket pakai ID, agar testnya lebih dinamis. Script bakal otomatis *create* tiket baru dulu buat dapetin ID yang pasti valid (bakal dapet `200 OK`). Nanti tinggal dilanjutin aja dengan ID ngasal kalau mau ngetest skenario `404 Not Found`.
 
 ## 📈 Cara Lihat Report
 Setelah test selesai dijalankan lewat Terminal, sistem akan otomatis bikin laporan yang rapi.
