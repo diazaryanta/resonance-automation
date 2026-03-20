@@ -52,7 +52,7 @@ Sebelum mulai nge-run proyek ini, pastikan sudah menginstall *tools* di bawah in
 
 ## 🚀 Cara Menjalankan Test
 
-Framework ini udah diatur supaya mendukung **Auto-Login (Otentikasi Dinamis)**. Jadi, kamu nggak perlu repot-repot nge-run *script* login terpisah setiap kali mau ngetest fitur lain. Token dan Cookies-nya udah diurus otomatis!
+Code yang dibuat udah diatur supaya mendukung **Auto-Login (Otentikasi Dinamis)**. Jadi, nggak perlu repot-repot nge-run *script* login terpisah setiap kali mau ngetest fitur lain. Token dan Cookies-nya udah diurus otomatis!
 
 ### Opsi 1: Lewat IntelliJ IDEA
 1. Buka file skenario test yang mau kamu jalanin. Misalnya: `src/test/java/API/tests/TicketTest.java` atau file di UI.
