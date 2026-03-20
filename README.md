@@ -1,6 +1,7 @@
 # 🚀 Resonance Test Automation
 
-Proyek ini adalah framework Test Automation untuk platform **[Resonance Dibimbing](https://resonance.dibimbing.id)**. Di dalamnya sudah mencakup otomatisasi pengujian untuk *User Interface* (UI) dan *Application Programming Interface* (API) menggunakan ekosistem Java.
+Proyek ini dikerjakan untuk melakukan pengujian pada website **[UI Resonance Dibimbing](https://resonance.dibimbing.id)** dan **[API Resonance Dibimbing](https://resonance.dibimbing.id/docs)**. 
+Proyek ini dilakukan untuk memenuhi syarat assignment **mini project dibimbing day 30**. Silahkan klik link berikut untuk **[QA Report](https://docs.google.com/document/d/1kibfIHHLxVoJFqTDHcdJNVpt6RMHYw4n-PTieKEPh5Y/edit?usp=sharing)**.
 
 ## 🛠️ Teknologi & *Library* yang Dipakai
 
