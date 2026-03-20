@@ -46,7 +46,7 @@ resonance-automation/
 ## ⚙️ Persiapan Awal (Prerequisites)
 
 Sebelum mulai nge-run proyek ini, pastikan sudah menginstall *tools* di bawah ini:
-1.  **Java Development Kit (JDK):** Versi 11, 17, atau 21.
+1.  **Java Development Kit (JDK):** Versi 17, atau 21.
 2.  **IDE:** IntelliJ IDEA (Sangat direkomendasikan).
 3.  **Koneksi Internet:** Wajib ada, karena pengetesan langsung ke server *live* Resonance.
 
