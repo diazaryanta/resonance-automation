@@ -49,18 +49,18 @@ resonance-automation/
 
 Sebelum mulai nge-run proyek ini, pastikan sudah menginstall *tools* di bawah ini:
 1.  **Java Development Kit (JDK):** Versi 17, atau 21.
-2.  **IDE:** IntelliJ IDEA (Sangat direkomendasikan).
+2.  **IDE:** IntelliJ IDEA.
 3.  **Koneksi Internet:** Wajib ada, karena pengetesan langsung ke server *live* Resonance.
 
 ## 🚀 Cara Menjalankan Test
 
-Code yang dibuat udah diatur supaya mendukung **Auto-Login (Otentikasi Dinamis)**. Jadi, nggak perlu repot-repot nge-run *script* login terpisah setiap kali mau ngetest fitur lain. Token dan Cookies-nya udah diurus otomatis!
+Code yang dibuat udah diatur supaya mendukung ***Auto-Login*** **(Otentikasi Dinamis)**. Jadi, nggak perlu repot-repot nge-run *script* login terpisah setiap kali mau ngetest fitur lain. *Token* dan *Cookiesnya* udah diurus otomatis!
 
 ### Opsi 1: Lewat IntelliJ IDEA
-1. Buka file skenario test yang mau kamu jalanin. Misalnya: `src/test/java/API/tests/TicketTest.java` atau file di UI.
+1. Buka file skenario test yang mau dijalanin. Misalnya: `src/test/java/API/tests/TicketTest.java` atau file di UI.
 2. Cari ikon **Play (Segitiga Hijau)** di sebelah kiri tulisan nama *class* atau *method* (contoh: `@Test public void testGetTicketByIdValid()`).
 3. Klik ikon tersebut lalu pilih **Run 'TicketTest...'**.
-4. Hasil test dan log *response* dari server bakal muncul di tab *Console/Run* di bagian bawah layarmu.
+4. Hasil test dan log *response* dari server bakal muncul di tab *Console/Run* di bagian bawah layar.
 
 ### Opsi 2: Lewat Terminal (Pake Gradle)
 Kalau mau nge-run semua test sekaligus lewat file konfigurasi XML:
@@ -75,7 +75,7 @@ Kalau mau nge-run semua test sekaligus lewat file konfigurasi XML:
 * **Keamanan API (NextAuth):** Server Resonance itu pakai sistem keamanan *NextAuth* yang lumayan ketat. Nah, test API di proyek ini udah diakalin biar selalu nangkep dan ngirim **Bearer Token** plus **Session Cookies** (`__Secure-next-auth.session-token`) secara otomatis lewat class `DataUtility.java`. Kalau kena *401 Unauthorized*, biasanya masalahnya ada di *Cookies* yang *expired*.
 * **API Chaining (Dinamis):** Untuk skenario ngambil tiket pakai ID, agar testnya lebih dinamis. Script bakal otomatis *create* tiket baru dulu buat dapetin ID yang pasti valid (bakal dapet `200 OK`). Nanti tinggal dilanjutin aja dengan ID ngasal kalau mau ngetest skenario `404 Not Found`.
 * **Password Leak Detection:** Fitur keamanan anti pop-up, Dengan mengatur `profile.password_manager_leak_detection` ke `false` memerintahkan Chrome untuk tidak mengecek kebocoran password selama sesi automation berlangsung.
-* **Auto Generate Token and Cookies:** Fitur auto generate token & cookies untuk mengantisipasi dynamic token & cookies pada saat login.
+* **Auto Generate Token and Cookies:** Fitur *auto generate token & cookies* untuk mengantisipasi *dynamic token & cookies* pada saat login.
 
 ## 📈 Cara Lihat Report
 Setelah test selesai dijalankan lewat Terminal, sistem akan otomatis bikin laporan yang rapi.
