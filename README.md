@@ -1,7 +1,7 @@
 # 🚀 Resonance Test Automation
 
 Proyek ini dikerjakan untuk melakukan pengujian pada website **[UI Resonance Dibimbing](https://resonance.dibimbing.id)** dan **[API Resonance Dibimbing](https://resonance.dibimbing.id/docs)**. 
-Proyek ini dilakukan untuk memenuhi syarat assignment **mini project dibimbing day 30**. Silahkan klik link berikut untuk **[QA Report](https://docs.google.com/document/d/1kibfIHHLxVoJFqTDHcdJNVpt6RMHYw4n-PTieKEPh5Y/edit?usp=sharing)**.
+Proyek ini dilakukan untuk memenuhi syarat assignment **mini project dibimbing day 30**. Silahkan klik link berikut untuk melihat **[QA Report](https://docs.google.com/document/d/1kibfIHHLxVoJFqTDHcdJNVpt6RMHYw4n-PTieKEPh5Y/edit?usp=sharing)**.
 
 ## 🛠️ Teknologi & *Library* yang Dipakai
 
@@ -21,7 +21,8 @@ resonance-automation/
 ├── build.gradle                 # Konfigurasi library dan dependencies (Rest Assured, Selenium, dll)
 ├── reports/
 │   ├── screenshots/             # Tempat nyimpen bukti screenshot kalau ada test UI yang fail
-│   ├── ExtentReport.html        # File HTML buat lihat hasil report lengkap (Pass/Fail)
+│   ├── API_Report.html          # File HTML buat lihat hasil report lengkap API automation (Pass/Fail)
+│   └── UI_Report.html           # File HTML buat lihat hasil report lengkap UI automation (Pass/Fail)
 ├── src/
 │   ├── main/java/
 │   │   ├── API/                 # Tempat nyimpen logic, endpoint, dan payload API
@@ -35,11 +36,12 @@ resonance-automation/
 │   └── test/java/
 │       ├── API/                 # File untuk nge-run test skenario API
 │       │   ├── base/            # BaseTest (Setup URL Utama API)
-│       │   └── tests/           # Skenario test API (contoh: LoginTest, TicketTest)
+│       │   ├── tests/           # Skenario test API (contoh: LoginTest, TicketTest)
+│       │   └── utils/           # Konfigurasi ExtentManager buat bikin laporan API
 │       └── UI/                  # File untuk nge-run test skenario UI
 │           ├── base/            # Setup logic buat report
 │           ├── tests/           # Skenario test UI (contoh: LoginTest & TicketTest)
-│           └── utils/           # Konfigurasi ExtentManager buat bikin laporan
+│           └── utils/           # Konfigurasi ExtentManager buat bikin laporan UI
 └── src/test/resources/suites/   # File XML TestNG buat nge-run banyak test sekaligus (batch)
 ```
 
@@ -73,9 +75,9 @@ Kalau mau nge-run semua test sekaligus lewat file konfigurasi XML:
 * **Keamanan API (NextAuth):** Server Resonance itu pakai sistem keamanan *NextAuth* yang lumayan ketat. Nah, test API di proyek ini udah diakalin biar selalu nangkep dan ngirim **Bearer Token** plus **Session Cookies** (`__Secure-next-auth.session-token`) secara otomatis lewat class `DataUtility.java`. Kalau kena *401 Unauthorized*, biasanya masalahnya ada di *Cookies* yang *expired*.
 * **API Chaining (Dinamis):** Untuk skenario ngambil tiket pakai ID, agar testnya lebih dinamis. Script bakal otomatis *create* tiket baru dulu buat dapetin ID yang pasti valid (bakal dapet `200 OK`). Nanti tinggal dilanjutin aja dengan ID ngasal kalau mau ngetest skenario `404 Not Found`.
 * **Password Leak Detection:** Fitur keamanan anti pop-up, Dengan mengatur `profile.password_manager_leak_detection` ke `false` memerintahkan Chrome untuk tidak mengecek kebocoran password selama sesi automation berlangsung.
-* **Auto Generate Token and Cookies:** 
+* **Auto Generate Token and Cookies:** Fitur auto generate token & cookies untuk mengantisipasi dynamic token & cookies pada saat login.
 
 ## 📈 Cara Lihat Report
 Setelah test selesai dijalankan lewat Terminal, sistem akan otomatis bikin laporan yang rapi.
-* **Laporan Bawaan Gradle:** Bisa kamu buka di `build/reports/problems/problems-report.html`.
-* **Laporan UI ExtentReports (Lebih Lengkap & Cakep):** Bisa kamu buka file `reports/ExtentReport.html` di browser.
+* **Laporan Bawaan Gradle:** Buka melalui file `build/reports/problems/problems-report.html`.
+* **Laporan UI ExtentReports (Lebih Lengkap & Cakep):** Buka melalui file `reports/API_Report.html` dan `report/UI_Report.html` di browser.
