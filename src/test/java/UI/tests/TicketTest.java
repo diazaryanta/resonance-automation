@@ -13,10 +13,10 @@ public class TicketTest extends BaseTest {
     public Object[][] getTicketData() {
         return new Object[][] {
                 // { Judul, Deskripsi, Tipe Tiket, Expected URL }
-                {"lorem", "lorem ipsum", "Public", "ticket"},
-                /*{"Describe Null", "  ", "Public", "new"}, // Describe null Bug*/
-                /*{" ", "  ", "Public", "new"}, // Blank Space Bug*/
-                /*{"\ud83d\ude2d", "\u26d4", "Public", "new"}, // Emoticon Bug
+                {"minal aidzin walfaidzin mohon maaf lahir dan batin semua", "3.0", "Public", "ticket"},
+                /*{"Describe Null", "  ", "Public", "new"}, // Describe null Bug
+                {" ", "  ", "Public", "new"}, // Blank Space Bug
+                {"\ud83d\ude2d", "\u26d4", "Public", "new"}, // Emoticon Bug
                 {"«‘“π…æ¬˚ºåß≤ºåß¡`¡™£¢•¶§∞§º", "Bug", "Public", "new"}, // Input Validation Bug
                 {"Success Ticket", "Ini adalah tiket private", "Private", "ticket"}*/
         };
@@ -27,7 +27,7 @@ public class TicketTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         TicketPage ticketPage = new TicketPage(driver);
 
-        loginPage.do_login("admin", "admin");
+        loginPage.do_login("user4", "password");
 
         test.info("Klik tombol Create Ticket");
         ticketPage.clickCreateTicketButton();
@@ -43,7 +43,7 @@ public class TicketTest extends BaseTest {
         ticketPage.submitTicket();
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

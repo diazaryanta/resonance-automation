@@ -68,10 +68,12 @@ Kalau mau nge-run semua test sekaligus lewat file konfigurasi XML:
 ./gradlew clean test -Dtestng.suiteXmlFiles=src/test/resources/suites/testng.xml
 ```
 
-## 🧠 Konsep Utama & Troubleshooting
+## 🧠 Fitur Utama & Troubleshooting
 
 * **Keamanan API (NextAuth):** Server Resonance itu pakai sistem keamanan *NextAuth* yang lumayan ketat. Nah, test API di proyek ini udah diakalin biar selalu nangkep dan ngirim **Bearer Token** plus **Session Cookies** (`__Secure-next-auth.session-token`) secara otomatis lewat class `DataUtility.java`. Kalau kena *401 Unauthorized*, biasanya masalahnya ada di *Cookies* yang *expired*.
 * **API Chaining (Dinamis):** Untuk skenario ngambil tiket pakai ID, agar testnya lebih dinamis. Script bakal otomatis *create* tiket baru dulu buat dapetin ID yang pasti valid (bakal dapet `200 OK`). Nanti tinggal dilanjutin aja dengan ID ngasal kalau mau ngetest skenario `404 Not Found`.
+* **Password Leak Detection:** Fitur keamanan anti pop-up, Dengan mengatur `profile.password_manager_leak_detection` ke `false` memerintahkan Chrome untuk tidak mengecek kebocoran password selama sesi automation berlangsung.
+* **Auto Generate Token and Cookies:** 
 
 ## 📈 Cara Lihat Report
 Setelah test selesai dijalankan lewat Terminal, sistem akan otomatis bikin laporan yang rapi.
