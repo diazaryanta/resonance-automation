@@ -14,11 +14,10 @@ Proyek ini dilakukan untuk memenuhi syarat assignment **mini project dibimbing d
 
 ## 📁 Struktur Proyek
 
-Biar kodenya rapi dan gampang dibaca, proyek ini dibangun pakai konsep **Page Object Model (POM)**.
+Biar kodenya rapi dan gampang dibaca, proyek ini dibangun pakai konsep **Page Object Model (POM)** yaitu memecah modul menjadi bagian dari package.
 
 ```text
 resonance-automation/
-├── build.gradle                 # Konfigurasi library dan dependencies (Rest Assured, Selenium, dll)
 ├── reports/
 │   ├── screenshots/             # Tempat nyimpen bukti screenshot kalau ada test UI yang fail
 │   ├── API_Report.html          # File HTML buat lihat hasil report lengkap API automation (Pass/Fail)
@@ -42,7 +41,10 @@ resonance-automation/
 │           ├── base/            # Setup logic buat report
 │           ├── tests/           # Skenario test UI (contoh: LoginTest & TicketTest)
 │           └── utils/           # Konfigurasi ExtentManager buat bikin laporan UI
-└── src/test/resources/suites/   # File XML TestNG buat nge-run banyak test sekaligus (batch)
+├── src/test/resources/suites/   # File XML TestNG buat nge-run banyak test sekaligus (batch)
+├── build.gradle                 # Konfigurasi library dan dependencies (Rest Assured, Selenium, dll)
+├── README.md                    # Dokumentasi panduan penggunaan proyek Resonance Automation
+└── settings.gradle              # Nama dari proyek yang dibuat
 ```
 
 ## ⚙️ Persiapan Awal (Prerequisites)
@@ -72,10 +74,10 @@ Kalau mau nge-run semua test sekaligus lewat file konfigurasi XML:
 
 ## 🧠 Fitur Utama & Troubleshooting
 
-* **Keamanan API (NextAuth):** Server Resonance itu pakai sistem keamanan *NextAuth* yang lumayan ketat. Nah, test API di proyek ini udah diakalin biar selalu nangkep dan ngirim **Bearer Token** plus **Session Cookies** (`__Secure-next-auth.session-token`) secara otomatis lewat class `DataUtility.java`. Kalau kena *401 Unauthorized*, biasanya masalahnya ada di *Cookies* yang *expired*.
-* **API Chaining (Dinamis):** Untuk skenario ngambil tiket pakai ID, agar testnya lebih dinamis. Script bakal otomatis *create* tiket baru dulu buat dapetin ID yang pasti valid (bakal dapet `200 OK`). Nanti tinggal dilanjutin aja dengan ID ngasal kalau mau ngetest skenario `404 Not Found`.
-* **Password Leak Detection:** Fitur keamanan anti pop-up, Dengan mengatur `profile.password_manager_leak_detection` ke `false` memerintahkan Chrome untuk tidak mengecek kebocoran password selama sesi automation berlangsung.
-* **Auto Generate Token and Cookies:** Fitur *auto generate token & cookies* untuk mengantisipasi *dynamic token & cookies* pada saat login.
+* **Keamanan API *(NextAuth)*:** Server Resonance itu pakai sistem keamanan *NextAuth* yang lumayan ketat. Nah, test API di proyek ini udah diakalin biar selalu nangkep dan ngirim ***Bearer Token*** plus ***Session Cookies*** (`__Secure-next-auth.session-token`) secara otomatis lewat class `DataUtility.java`. Kalau kena *401 Unauthorized*, biasanya masalahnya ada di *Cookies* yang *expired*.
+* ***API Chaining (Dinamis)*:** Untuk skenario ngambil tiket pakai ID, agar testnya lebih dinamis. *Script* bakal otomatis *create* tiket baru dulu buat dapetin ID yang pasti valid (bakal dapet `200 OK`). Nanti tinggal dilanjutin aja dengan ID ngasal kalau mau ngetest skenario `404 Not Found`.
+* ***Password Leak Detection*:** Fitur keamanan anti pop-up, Dengan mengatur `profile.password_manager_leak_detection` ke `false` memerintahkan Chrome untuk tidak mengecek kebocoran password selama sesi automation berlangsung.
+* ***Auto Generate Token and Cookies*:** Fitur *auto generate token & cookies* untuk mengantisipasi *dynamic token & cookies* pada saat login.
 
 ## 📈 Cara Lihat Report
 Setelah test selesai dijalankan lewat Terminal, sistem akan otomatis bikin laporan yang rapi.
