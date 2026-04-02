@@ -14,7 +14,7 @@ Proyek ini dilakukan untuk memenuhi syarat assignment **mini project dibimbing d
 
 ## 📁 Struktur Proyek
 
-Biar kodenya rapi dan gampang dibaca, proyek ini dibangun pakai konsep **Page Object Model (POM)** yaitu memecah modul menjadi bagian dari package.
+Biar kodenya rapi dan gampang dibaca, proyek ini dibangun pakai konsep **Page Object Model (POM)** yaitu memecah modul menjadi beberapa bagian dari package.
 
 ```text
 resonance-automation/
